@@ -133,8 +133,8 @@ function updateProfile(profile) {
     const percent = (skill.value / 10) * 100;
     skillDiv.innerHTML = `
       <i class="${skill.icon}"></i> ${skill.name}
-      <div class="skill-bar"><div class="fill" style="width: ${percent}%"></div></div>
       <span class="skill-value">${skill.value.toFixed(1)}</span>
+      <div class="skill-bar"><div class="fill" style="width: ${percent}%"></div></div>
     `;
     matrix.appendChild(skillDiv);
   });

@@ -16,6 +16,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /* ====== Header ====== */
@@ -156,6 +157,10 @@ section p {
   max-width: 720px;
   color: #7fd9ffcc;
   text-shadow: 0 0 4px #3eaaff66;
+}
+
+#about{
+  padding-top: 1px;
 }
 
 /* ====== Members Grid ====== */

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Профиль — Граф Бомбус Дэбчанский</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0b3e6f5.js" crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+
+<body>
+  <!-- Анимированный фон -->
+  <div class="bg-shapes">
+    <svg width="100%" height="100%" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+        <!-- Сигнальные линии -->
+        <path d="M50 100 H300 V200 H500" stroke="#00ffff33" stroke-width="1" fill="none" />
+        <path d="M100 400 C150 350, 250 450, 300 400 S450 350, 500 400" stroke="#00ffff33" stroke-width="1" fill="none" />
+
+        <!-- Контактные узлы -->
+        <circle cx="100" cy="100" r="6" fill="#00ffff55" />
+        <circle cx="300" cy="200" r="6" fill="#00ffff55" />
+        <circle cx="500" cy="400" r="6" fill="#00ffff55" />
+
+        <!-- Код -->
+        <text x="600" y="100" font-family="Courier New" font-size="16" fill="#00ffff22">01001110</text>
+        <text x="600" y="130" font-family="Courier New" font-size="16" fill="#00ffff22">f(x) = -sin(x)</text>
+
+        <!-- Чип-контур -->
+        <rect x="580" y="200" width="140" height="100" rx="12" ry="12" stroke="#00ffff22" stroke-width="1" fill="none" />
+        <line x1="650" y1="300" x2="650" y2="350" stroke="#00ffff22" stroke-width="1" />
+        <circle cx="650" cy="355" r="5" fill="#00ffff44" />
+
+        <!-- Имитация платы -->
+        <line x1="100" y1="600" x2="300" y2="600" stroke="#00ffff22" stroke-width="1" />
+        <line x1="300" y1="600" x2="300" y2="700" stroke="#00ffff22" stroke-width="1" />
+        <circle cx="300" cy="700" r="4" fill="#00ffff44" />
+    </svg>
+  </div>
+
+
+  <div class="container">
+    <div class="header">
+      <img src="profile01.png" alt="Граф Бомбус Дэбчанский" />
+      <div class="details">
+        <h1 id="name"></h1>
+        <p id="real_name"><strong>Настоящее имя:</strong></p>
+        <p id="join_date"><strong>Дата вступления:</strong></p>
+        <p id="telegram"><strong>Telegram:</strong> <a href=""></a></p>
+        <p id="number"><strong>Порядковый номер:</strong><span style="color:#888;"></span></p>
+      </div>
+      <a href="../index.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Главная
+      </a>
+    </div>
+
+    
+    <div class="badges" id="badges"></div>
+
+    <div class="level-indicator">
+      <div class="level-label" id="level-label"></div>
+      <div class="level-bar">
+        <div class="level-fill" style="width: 0%;" id="level-fill"></div>
+      </div>
+    </div>
+
+  
+    <div class="status-panel">
+      <div class="status-item energy-status">
+        <i class="fas fa-bolt"></i> Энергостатус: 
+        <div class="energy-scale" id="energy-scale"></div>
+      </div>
+  
+      <div class="status-item mood">
+        <i class="fas fa-smile-beam mood-icon"></i> Настроение:
+        <div class="mood-scale" id="mood-scale">
+          <div class="mood-box filled"></div>
+          <div class="mood-box filled"></div>
+          <div class="mood-box filled"></div>
+          <div class="mood-box filled"></div>
+          <div class="mood-box filled"></div>
+          <div class="mood-box"></div>
+          <div class="mood-box"></div>
+          <div class="mood-box"></div>
+          <div class="mood-box"></div>
+          <div class="mood-box"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bio neon-panel" id="bio">
+      <h2><i class="fas fa-info-circle"></i> Досье участника</h2>
+    </div>
+
+
+
+    <div class="matrix glow-block upgraded-matrix" id="matrix">
+      <strong ><h2><i class="fas fa-microchip"></i> Матрица знаний</h2></strong>
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="profile.js"></script>

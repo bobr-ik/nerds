@@ -1,0 +1,673 @@
+/* ======================== */
+/* Base Styles */
+/* ======================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #0b0e17;
+  color: #4bc0ff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #00ffff;
+}
+a:hover {
+  color: #ffffff;
+}
+
+/* ======================== */
+/* Typography */
+/* ======================== */
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.details h1 {
+  font-size: 2.8rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffffcc;
+  animation: glowFade 2s ease-in-out infinite alternate;
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin: 6px 0;
+  color: #ccefff;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff88;
+  margin-bottom: 20px;
+}
+
+/* ======================== */
+/* Containers and Layout */
+/* ======================== */
+
+.container {
+  padding: 60px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #1e2b3a;
+}
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ======================== */
+/* Background Shapes */
+/* ======================== */
+
+.bg-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-shapes svg {
+  position: absolute;
+  fill: none;
+  stroke: #00ffff33;
+  stroke-width: 1;
+  animation: float 15s infinite alternate ease-in-out;
+}
+.bg-shapes svg:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  transform: scale(1.5);
+}
+.bg-shapes svg:nth-child(2) {
+  bottom: 10%;
+  right: 5%;
+  transform: scale(2) rotate(45deg);
+}
+
+/* ======================== */
+/* Images */
+/* ======================== */
+
+img {
+  max-width: 200px;
+  border-radius: 20px;
+  border: 3px solid #00e1ff;
+  box-shadow: 0 0 30px #00e1ff80;
+  transition: transform 0.4s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* ======================== */
+/* Badges */
+/* ======================== */
+
+.badges {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(19, 24, 37, 0.6);
+  border: 1px solid #00f0ff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #00f0ff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px #00f0ff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: default;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f0ff88, 0 0 40px #00f0ff44 inset;
+}
+
+.badge i {
+  font-size: 1.2rem;
+  color: #00ffff;
+}
+
+.badge::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, #00f0ff44, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* ======================== */
+/* Panels and Sections */
+/* ======================== */
+
+.bio,
+.neon-panel {
+  margin-top: 30px;
+  background: linear-gradient(145deg, #101522, #0b0e17);
+  padding: 25px 30px;
+  border-radius: 12px;
+  border: 1px solid #00f0ff44;
+  box-shadow: 0 0 20px #00f0ff22;
+  animation: fadeInUp 1s ease;
+}
+
+.glow-text {
+  color: #4bc0ff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.code-glow {
+  font-family: 'Courier New', monospace;
+  color: #00ffff;
+  font-weight: 700;
+  text-shadow: 0 0 8px #00ffff99;
+}
+
+/* ======================== */
+/* Skill Bars */
+/* ======================== */
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  color: #00f0ff;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.skill i {
+  margin-right: 8px;
+  color: #4bc0ff;
+}
+
+.skill-bar,
+.level-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: #1a2738;
+  box-shadow: inset 0 0 5px #000;
+  margin: 6px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar .fill,
+.level-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f0ff, #4bc0ff);
+  box-shadow: 0 0 8px #00f0ffaa;
+  animation: growBar 1.2s ease-out;
+}
+
+.skill-value {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.85rem;
+  color: #9befff;
+  text-shadow: 0 0 6px #00f0ff66;
+}
+
+/* ======================== */
+/* Equations & Preformatted */
+/* ======================== */
+
+.equation,
+.matrix,
+.binary {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #2bafff;
+  margin-top: 20px;
+  background-color: #111a2a;
+  border-left: 4px solid #4bc0ff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #00f0ff33;
+  transition: transform 0.3s ease;
+}
+.equation:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 16px #00f0ff66;
+}
+
+pre {
+  background: #0f131d;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #1f2a3d;
+  overflow-x: auto;
+}
+
+/* ======================== */
+/* Status Panel */
+/* ======================== */
+
+.status-panel {
+  background: #0f121c;
+  border: 1px solid #00ffff66;
+  border-radius: 14px;
+  padding: 20px 30px;
+  color: #4bc0ff;
+  font-family: 'Share Tech Mono', monospace;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+  box-shadow: 0 0 12px #00ffff88;
+}
+
+.status-item {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.status-item i {
+  font-size: 1.3rem;
+  color: #00ffffcc;
+}
+
+/* Mood and Energy Indicators */
+.mood-icon,
+.animated-bolt {
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.mood-icon {
+  font-size: 1.4rem;
+  color: var(--mood-color, #9dbb00);
+  margin-right: 6px;
+}
+
+.mood-text {
+  font-weight: 700;
+  color: #ffff66;
+  text-shadow: 0 0 8px #ffff66aa;
+}
+
+.attitude-text {
+  font-weight: 700;
+  color: #66ffff;
+  text-shadow: 0 0 10px #66ffffcc;
+}
+
+.mood-scale {
+  display: flex;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.mood-box {
+  width: 18px;
+  height: 24px;
+  background: #00445544;
+  border-radius: 3px;
+  box-shadow: inset 0 0 6px #00112288;
+  transition: background-color 0.3s ease;
+}
+.mood-box.filled {
+  background: var(--mood-color, #9dbb00);
+  box-shadow:
+    0 0 8px var(--mood-color, #9dbb00aa),
+    inset 0 0 12px var(--mood-color, #a6ca00);
+}
+
+.energy-scale {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.energy-bolt {
+  font-size: 18px;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+.energy-bolt.filled {
+  text-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
+/* ======================== */
+/* Buttons */
+/* ======================== */
+
+.btn-back {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background: #00e0ff;
+  color: #0b0e17;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #00e0ffbb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+.btn-back:hover {
+  background: #00b8cc;
+  box-shadow: 0 0 20px #00ffffdd;
+  transform: translateX(-4px);
+}
+
+
+/* ======================== */
+/* Level bar */
+/* ======================== */
+
+
+.level-indicator {
+  width: 100%;
+  margin: 40px 0 16px 0; /* сверху 12px, снизу 16px */
+}
+
+.level-label {
+  font-weight: 600;
+  font-size: 2.8rem;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00bfffcc;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  /* color: #2c3e50; */
+  
+}
+
+.level-label i {
+  color: #00ffff; /* синий акцент */
+  font-size: 1rem;
+}
+
+.level-bar {
+  box-shadow: 0 0 30px #00e1ff80;
+  width: 100%;
+  height: 10px;
+  background: #00445544; /* светло-синий фон */
+  border-radius: 5px;
+  border: 1px solid #00f0ff44;
+  overflow: hidden;
+  /* box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); */
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f0ff, #4bc0ff);
+  border-radius: 5px 0 0 5px;
+  transition: width 0.3s ease;
+}
+
+/* ======================== */
+/* Animations */
+/* ======================== */
+
+@keyframes float {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-20px) scale(1.1); }
+}
+
+@keyframes glowFade {
+  from { text-shadow: 0 0 10px #00ffffcc; }
+  to { text-shadow: 0 0 20px #00ffff; }
+}
+
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 6px #00ffffaa); }
+  100% { filter: drop-shadow(0 0 18px #00ffffee); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growBar {
+  from { width: 0%; }
+  to { width: inherit; }
+}
+
+@keyframes moodBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+
+/* Основной адаптив для планшетов и телефонов */
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .details h1 {
+    font-size: 2rem;
+  }
+
+  .badge {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .status-item {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+  }
+
+  .bio {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+
+  .mood-scale,
+  .energy-scale {
+    flex-wrap: wrap;       /* Позволяем блокам переноситься */
+    gap: 4px;              /* Немного меньше отступ */
+    margin-left: 6px;
+    justify-content: center;
+  }
+
+  .mood-box,
+  .energy-bolt {
+    width: 14px;           /* Уменьшаем ширину */
+    height: 20px;          /* Уменьшаем высоту */
+    font-size: 14px;       /* Для молний уменьшаем размер */
+  }
+}
+
+/* Адаптив для экранов до 400px */
+@media (max-width: 400px) {
+  .details h1 {
+    font-size: 1.6rem;
+  }
+
+  img {
+    max-width: 150px;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .status-item {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .status-item i {
+    font-size: 1.1rem;
+  }
+
+  .skill-bar {
+    height: 10px;
+  }
+
+  .skill-value {
+    font-size: 0.75rem;
+  }
+
+  .bio {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 20px 10px;
+  }
+}
+
+/* Адаптив для очень маленьких экранов <=300px */
+@media (max-width: 300px) {
+  body {
+    font-size: 12px;
+  }
+
+  .details h1 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  img {
+    max-width: 120px;
+    border-radius: 15px;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    gap: 4px;
+    border-radius: 6px;
+  }
+
+  .status-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+
+  .status-item i {
+    font-size: 1rem;
+  }
+
+  .skill-bar {
+    height: 8px;
+  }
+
+  .skill-value {
+    font-size: 0.65rem;
+  }
+
+  .bio {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+
+  .container {
+    padding: 15px 8px;
+  }
+
+  .header {
+    gap: 20px;
+  }
+
+  .mood-icon {
+    font-size: 1.1rem;
+  }
+
+  .energy-bolt {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 300px) {
+  .mood-scale {
+    flex-wrap: wrap; /* Позволяет блокам переноситься на следующую строку */
+    gap: 4px; /* Меньший отступ */
+    margin-left: 6px;
+    justify-content: center; /* Чтобы шкала была по центру */
+  }
+
+  .mood-box {
+    width: 12px;  /* Уменьшаем ширину */
+    height: 18px; /* Уменьшаем высоту */
+    box-shadow: inset 0 0 4px #00112288;
+  }
+
+  .mood-icon {
+    margin-right: 4px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .energy-scale {
+    flex-wrap: wrap; /* Позволяем молниям переноситься */
+    gap: 2px;        /* Меньший отступ между молниями */
+    margin-left: 6px;
+    justify-content: center; /* Центрируем шкалу */
+  }
+
+  .energy-bolt {
+    font-size: 14px; /* Уменьшаем размер */
+    line-height: 1;
+  }
+}
+
+

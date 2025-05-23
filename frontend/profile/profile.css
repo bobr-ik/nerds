@@ -30,12 +30,14 @@ h1, h2 {
   font-family: 'Orbitron', sans-serif;
 }
 
-.details h1 {
+#name {
   font-size: 2.8rem;
   color: #00ffff;
   text-shadow: 0 0 10px #00ffffcc;
   animation: glowFade 2s ease-in-out infinite alternate;
   margin-bottom: 10px;
+  display: block;
+  align-self: stretch;
 }
 
 .details p {
@@ -43,11 +45,36 @@ h1, h2 {
   color: #ccefff;
 }
 
+.details{
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.days_no_az{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 10%;
+}
+
 h2 {
   font-size: 1.8rem;
   color: #00eaff;
   text-shadow: 0 0 10px #00eaff88;
   margin-bottom: 20px;
+}
+
+.details .counter {
+  font-size: 1.8rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff88;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* ======================== */
@@ -64,7 +91,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 40px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding-bottom: 40px;
   border-bottom: 2px solid #1e2b3a;
 }
@@ -569,6 +596,15 @@ pre {
 
   .container {
     padding: 20px 10px;
+  }
+
+  .days_no_az{
+    padding: 0;
+  }
+
+  .details{
+    align-items: center;
+    justify-content: center;
   }
 }
 

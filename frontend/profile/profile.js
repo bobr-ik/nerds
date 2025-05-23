@@ -7,6 +7,7 @@ const profileData = {
   avatar: "profile01.png",
   idNumber: "01",
   idBinary: "1110",
+  no_az: 228,
   level: 7,
   levelProgress: 65,
   badges: [
@@ -99,6 +100,7 @@ function updateProfile(profile) {
   document.getElementById("join_date").innerHTML = `<strong>Дата вступления:</strong> ${profile.joinDate}`;
   document.getElementById("telegram").innerHTML = `<strong>Telegram:</strong> <a href="${profile.telegramLink}">@${profile.telegram}</a>`;
   document.getElementById("number").innerHTML = `<strong>Порядковый номер:</strong> ${profile.idNumber} <span style="color:#888;">(${profile.idBinary})</span>`;
+  document.getElementById("days_no_az").innerHTML = profile.no_az
 
   // Уровень
   document.getElementById("level-label").textContent = `Уровень ${profile.level}`;

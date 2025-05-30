@@ -38,6 +38,7 @@ h1, h2 {
   margin-bottom: 10px;
   display: block;
   align-self: stretch;
+  width: 100%;
 }
 
 .details p {

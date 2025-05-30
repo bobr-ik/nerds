@@ -281,13 +281,13 @@ section p {
   text-shadow: 0 0 8px #00f0ffbb;
 }
 
-.award h3::before {
+/* .award h3::before {
   content: '🏅';
   font-size: 1.6rem;
   filter: drop-shadow(0 0 2px #00e0ff);
-}
+} */
 
-.award p {
+.award p {  
   color: #7fd9ffcc;
   font-size: 1rem;
   line-height: 1.5;
